@@ -1,7 +1,8 @@
 // Selection Sort!
 // Places small values into sorted position one at a time. Moving from beginning to the end. Swap position of minimum with beginning of array.
 // Make sure to increase the start of the array by 1.
-// Time Complexity - O(n^2)
+// Time Complexity - Best/Worst/Average of O(n^2)
+// Space Complexity - O(1)
 
 const swap = (arr, idx1, idx2) => {
   const temp = arr[idx1];
