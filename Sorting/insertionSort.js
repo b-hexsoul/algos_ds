@@ -12,7 +12,7 @@ const insertionSort = (arr) => {
     //
     // starts at the end of the sorted (left) "array" and decreases until left number is no longer greater than
     // continue to swap while number to the left is greater than
-    for (var j = i - 1; j >= 0 && arr[j] > arr[j + 1]; j--) {
+    for (let j = i - 1; j >= 0 && arr[j] > arr[j + 1]; j--) {
       [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
     }
   }
