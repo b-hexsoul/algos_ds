@@ -28,3 +28,45 @@ const pivot = (arr, start = 0, end = arr.length - 1) => {
 
   return pivotIdx;
 };
+
+const quickSort = (arr, left = 0, right = arr.length - 1) => {
+  if (left < right) {
+    let pivotIdx = pivot(arr, left, right);
+
+    quickSort(arr, left, pivotIdx - 1);
+    quickSort(arr, pivotIdx + 1, right);
+  }
+  return arr;
+};
+
+const list3 = [1, 2, 4, 32, 44, 959, 111, 42, 532, 41];
+
+console.log(quickSort(list3));
+
+// Big O Complexity
+// Best - O(n log n)
+// Average - O(n log n)
+// Worst - O(n^2) - if pivot chosen is the minimum element or the maximum element
+
+// Space complexity O(log n)
+
+// *** Another implementation with larger space complexity
+const quickSort2 = (arr) => {
+  let pivot = arr[arr.length - 1];
+  let left = [];
+  let right = [];
+
+  if (arr.length <= 1) return arr;
+
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] > pivot) {
+      right.push(arr[i]);
+    } else {
+      left.push(arr[i]);
+    }
+  }
+
+  return [...quickSort(left), pivot, ...quickSort(right)];
+};
+
+console.log(quickSort2(list3));
