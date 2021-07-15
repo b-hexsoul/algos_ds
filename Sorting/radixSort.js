@@ -2,6 +2,9 @@
 // It never makes comparisons between elements!
 // It exploits the fact that information about the size of a number is encoded in the number of digits
 
+// Big O - Best/Average/Worst O(nk)
+// Space = O(n + k)
+
 const getDigit = (num, i) => {
   return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10;
 };
