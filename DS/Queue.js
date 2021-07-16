@@ -4,6 +4,8 @@
 // Use Cases
 // background tasks, uploading resource, printing/ task processing
 
+// Big O - Insertion and Removal are O(1)
+
 class Node {
   constructor(value) {
     this.value = value;
@@ -38,6 +40,6 @@ class Queue {
     const temp = this.first;
     this.first = this.first.next;
     this.size--;
-    return temp;
+    return temp.value;
   }
 }
