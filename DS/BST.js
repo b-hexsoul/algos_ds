@@ -25,6 +25,13 @@ File Systems
 // Each parent has two child nodes at most
 // Sorted in a particular way - Every child node to the left of the parent is always less
 
+// * Big O of BST
+/*
+Insertion - O(log n)
+Searching - O(log n)
+but not guaranteed (completely one sided tree);
+*/
+
 class Node {
   constructor(value) {
     this.value = value;
