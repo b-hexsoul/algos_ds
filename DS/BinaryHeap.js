@@ -16,6 +16,11 @@
 //    The left child is stored at 2n + 1
 //    The right child is stored at 2n + 2
 
+// REMOVING FROM A HEAP
+//  - Remove the root
+//  - Replace with the most recently added
+//  - Adjust (sink down)
+
 class MaxBinaryHeap {
   constructor() {
     this.values = [];
@@ -34,6 +39,36 @@ class MaxBinaryHeap {
       parentIndex = Math.floor((index - 1) / 2);
     }
   }
+
+  extractMax() {
+    const max = this.values.shift();
+    this.values.unshift(this.values.pop());
+    let index = 0;
+    while (index < this.values.length) {
+      let leftIdx = 2 * index + 1;
+      let rightIdx = 2 * index + 2;
+      if (
+        this.values[leftIdx] > this.values[rightIdx] &&
+        this.values[leftIdx] > this.values[index]
+      ) {
+        let temp = this.values[index];
+        this.values[index] = this.values[leftIdx];
+        this.values[leftIdx] = temp;
+        index = leftIdx;
+      } else if (
+        this.values[rightIdx] > this.values[leftIdx] &&
+        this.values[rightIdx] > this.values[index]
+      ) {
+        let temp = this.values[index];
+        this.values[index] = this.values[rightIdx];
+        this.values[rightIdx] = temp;
+        index = rightIdx;
+      } else {
+        break;
+      }
+    }
+    return max;
+  }
 }
 
 const heap = new MaxBinaryHeap();
@@ -42,5 +77,10 @@ heap.insert(20);
 heap.insert(5);
 console.log(heap);
 heap.insert(200);
-
+heap.insert(33);
+heap.insert(45);
+heap.insert(52);
+heap.insert(300);
+console.log(heap);
+console.log(heap.extractMax());
 console.log(heap);
