@@ -15,3 +15,6 @@ const maxSubArray = (nums) => {
 };
 
 maxSubArray(list);
+
+let map = { 0: 1, 1: 1 };
+console.log(map);
