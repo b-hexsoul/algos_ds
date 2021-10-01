@@ -28,4 +28,6 @@ const non_repeat_substring = function (str) {
   return maxSubstring;
 };
 
-non_repeat_substring('aabccbb');
+console.log(`Length of the longest substring: ${non_repeat_substring('aabccbb')}`);
+console.log(`Length of the longest substring: ${non_repeat_substring('abbbb')}`);
+console.log(`Length of the longest substring: ${non_repeat_substring('abccde')}`);
