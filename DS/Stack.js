@@ -52,17 +52,19 @@ class Stack {
 
     this.first = this.first.next;
     this.size--;
-    return temp;
+    return temp.value;
+  }
+
+  peek() {
+    return !this.first ? null : this.first.value;
   }
 }
 
 const stack = new Stack();
-stack.push('hello');
-stack.push('world');
-stack.push('colt');
+stack.push("hello");
+stack.push("world");
+stack.push("colt");
 console.log(stack);
 stack.pop();
 console.log(stack);
-stack.pop();
-stack.pop();
-console.log(stack);
+console.log(stack.peek());
