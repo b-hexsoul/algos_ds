@@ -24,6 +24,8 @@ function merge(arr1, arr2) {
     }
   }
 
+  console.log("newArr1", newArr);
+
   while (i < arr1.length) {
     newArr.push(arr1[i]);
     i++;
@@ -33,7 +35,7 @@ function merge(arr1, arr2) {
     newArr.push(arr2[j]);
     j++;
   }
-
+  console.log("newArr2", newArr);
   return newArr;
 }
 
