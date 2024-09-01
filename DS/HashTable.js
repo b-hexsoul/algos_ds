@@ -24,7 +24,7 @@ function stringHash(key, arrayLen) {
 // Separate Chaining
 // At each index in our array we store values using a more sophisticated DS like a linked list
 
-// Linear Probing
+// Linear Probing  or Open Addressing
 // When we find a collision, we search through for the next empty slot
 
 // Hash Table insertion, deletion, access on average is O(1) constant time.
